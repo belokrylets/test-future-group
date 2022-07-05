@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import MainPage from "./components/MainPage";
 import SearchResults from "./components/SearchResults";
 import SelectedBook from "./components/SelectedBook";
 
@@ -6,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <SelectedBook selectedBookImage={""} path={""} selectedBookTitle={""} selectedBookAuthor={""} selectedDescription={""} />
+      <MainPage /> 
     </div>
   );
 }

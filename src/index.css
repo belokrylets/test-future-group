@@ -72,6 +72,13 @@ input:active,
   margin-right: 20px;
 }
 
+/* mainPage */
+
+.mainPage {
+  margin: 30px;
+  text-align: center;
+}
+
 /* searchResults */
 
 .amount {
