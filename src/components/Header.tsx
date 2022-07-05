@@ -20,11 +20,8 @@ const Header = () => {
                     <label>
                         Categories
                         <select>
-                            <option value="">Select a fruit</option>
-                            <option value="grapefruit">Grapefruit</option>
-                            <option value="lime">Lime</option>
-                            <option value="coconut">Coconut</option>
-                            <option value="mango">Mango</option>
+                            <option value="">All</option>
+                            <option value=""></option>
                         </select>
                     </label>
                 </div>
@@ -32,11 +29,9 @@ const Header = () => {
                     <label>
                         Sorting by
                         <select>
-                            <option value="">Select a fruit</option>
-                            <option value="grapefruit">Grapefruit</option>
-                            <option value="lime">Lime</option>
-                            <option value="coconut">Coconut</option>
-                            <option value="mango">Mango</option>
+                            <option value="relevance">relevance</option>
+                            <option value=""></option>
+
                         </select>
                     </label>
                 </div>
@@ -45,4 +40,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
