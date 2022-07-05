@@ -1,11 +1,12 @@
 import Header from "./components/Header";
 import SearchResults from "./components/SearchResults";
+import SelectedBook from "./components/SelectedBook";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <SearchResults />
+      <SelectedBook selectedBookImage={""} path={""} selectedBookTitle={""} selectedBookAuthor={""} selectedDescription={""} />
     </div>
   );
 }

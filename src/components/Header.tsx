@@ -30,7 +30,7 @@ const Header = () => {
                         Sorting by
                         <select>
                             <option value="relevance">relevance</option>
-                            <option value=""></option>
+                            <option value="newest">newest</option>
 
                         </select>
                     </label>
