@@ -1,6 +1,18 @@
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import logo from '../media/image/searh.svg'
+import { searchSlice } from '../store/redusers/searchSlice';
 
 const Header = () => {
+    const navigate = useNavigate();
+    const { searchInput, categorySelection, sortingSelection } = searchSlice.actions;
+    const dispatch = useAppDispatch()
+
+
+    const { searchLine } = useAppSelector(state => state.searchReduser);
+
+
+
     return (
         <div className="header">
             <h1>
@@ -10,8 +22,10 @@ const Header = () => {
                 <input
                     type='text'
                     placeholder='Поиск...'
+                    value={searchLine}
+                    onChange={(e) => dispatch(searchInput(e.target.value))}
                 />
-                <div className="searchLogo">
+                <div className="searchLogo" onClick={() => navigate('resultSearch')}>
                     <img src={logo} alt="" />
                 </div>
             </div>
@@ -19,19 +33,18 @@ const Header = () => {
                 <div className="categories">
                     <label>
                         Categories
-                        <select>
-                            <option value="">All</option>
-                            <option value=""></option>
+                        <select onChange={(e) => dispatch(categorySelection(e.target.value))}>
+                            <option value="All">All</option>
+                            <option value="Computers">Computers</option>
                         </select>
                     </label>
                 </div>
                 <div className="sorting">
                     <label>
                         Sorting by
-                        <select>
+                        <select onChange={(e) => dispatch(sortingSelection(e.target.value))}>
                             <option value="relevance">relevance</option>
                             <option value="newest">newest</option>
-
                         </select>
                     </label>
                 </div>

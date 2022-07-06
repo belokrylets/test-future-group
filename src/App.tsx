@@ -11,8 +11,8 @@ import SelectedBook from "./components/SelectedBook";
 const App = () => {
   return (
     <div>
-      <Header />
       <Router>
+        <Header />
         <Routes>
           <Route path="" element={<MainPage />} />
           <Route path="resultSearch" element={<SearchResults />} />
