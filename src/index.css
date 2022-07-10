@@ -1,13 +1,92 @@
+@media (min-width: 300px) and (max-width: 600px) {
+  .textInput {
+    padding: 0 20px;
+  }
+
+  .sort {
+    flex-direction: column;
+  }
+
+  .sorting {
+    margin-right: 20px;
+  }
+
+  .selectedBook {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+
+
+  .selectedBookImage>img {
+    height: 70%;
+  }
+
+  .selectedBookInfo {
+
+    width: 100vw;
+  }
+
+  .path,
+  .selectedBookTitle,
+  .selectedBookAuthor {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 100vw;
+
+  }
+
+  .selectedDescription {
+    margin: 0 20px;
+    width: 100vw;
+
+
+  }
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  .selectedBook {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+
+
+  .selectedBookImage>img {
+    height: 70%;
+  }
+
+  .selectedBookInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .selectedDescription {
+    margin: 0 20px;
+    width: 70%;
+
+
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
   margin: 0;
 }
 
+.erorrs {
+  text-align: center;
+}
+
 /* header */
 
 .header {
-  width: 100vmax;
+  width: 100vw;
   height: 190px;
 
   text-align: center;
@@ -93,11 +172,45 @@ input:active,
 }
 
 
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 40px 40px 40px 0;
+
+  cursor: pointer;
+
+}
+
+.buttonLoadMore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 30px 25px;
+  gap: 10px;
+
+  width: 150px;
+  height: 44px;
+
+
+  background: #c7c7e2;
+  border-radius: 6px;
+  border: none;
+}
+
+.buttonLoadMore:hover {
+  color: #fff;
+  background: #777785;
+}
+
+
 
 /* cardBook */
 
 .cardBook {
-  height: 350px;
+  min-height: 350px;
+  max-height: 100%;
   width: 200px;
 
   margin: 10px;
@@ -154,7 +267,8 @@ input:active,
   align-items: center;
   justify-content: center;
 
-  height: 450px;
+  min-height: 450px;
+  max-height: 100%;
   width: 400px;
 
   background: rgb(228, 228, 228);
@@ -166,17 +280,28 @@ input:active,
 
 .selectedBookInfo {
   margin: 30px;
+  width: 500px;
 }
 
 .path {
+  display: flex;
   margin-bottom: 30px;
   font-size: 15px;
 
   color: rgb(65, 65, 65);
 }
 
+.path p {
+  cursor: pointer;
+}
+
+.path p:hover {
+  color: rgb(175, 80, 80);
+}
+
 .selectedBookTitle {
   margin-bottom: 15px;
+
 
   font-size: 18px;
   font-weight: bold;
@@ -184,6 +309,7 @@ input:active,
 
 .selectedBookAuthor {
   margin-bottom: 15px;
+
 
   font-size: 13px;
   color: rgb(129, 129, 129);
@@ -193,10 +319,72 @@ input:active,
 
 .selectedDescription {
   padding: 10px;
-  width: 500px;
-  height: 200px;
+
+  min-height: 200px;
+  max-height: 100%;
 
   font-size: 15px;
 
   border: solid 1px rgb(189, 188, 188);
+}
+
+/* Loading */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  animation: animateBg 10s linear infinite;
+}
+
+@keyframes animateBg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.loading .loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+
+.loading .loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #db0f0f;
+  box-shadow: 0 0 10px #db0f0f;
+
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+
+  80%,
+  100% {
+    transform: scale(0);
+  }
 }

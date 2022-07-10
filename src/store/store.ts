@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import booksReduser from "./redusers/BooksSlice";
+import booksReduser from "./redusers/booksSlice";
+import currentBookReduser from "./redusers/currentBookSlice";
 import searchReduser from "./redusers/searchSlice";
 
 const rootReduser = combineReducers({
     booksReduser,
-    searchReduser
+    searchReduser,
+    currentBookReduser,
 })
 
 export const setupStore = () => {

@@ -3,7 +3,7 @@ import { ISearch } from "../../types/search";
 
 const initialState: ISearch = {
     searchLine: "",
-    categories: "",
+    categories: "All",
     sorting: "relevance"
 }
 

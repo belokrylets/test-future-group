@@ -16,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path="" element={<MainPage />} />
           <Route path="resultSearch" element={<SearchResults />} />
-          <Route path="bookPage" element={<SelectedBook selectedBookImage={""} path={""} selectedBookTitle={""} selectedBookAuthor={""} selectedDescription={""} />} />
+          <Route path="bookPage" element={<SelectedBook />} />
           <Route path="*" element={<h3>Ошибка 404. Страница не найдена</h3>} />
         </Routes>
       </Router>

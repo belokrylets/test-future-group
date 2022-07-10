@@ -1,21 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchBooks } from "../../action/fetchBooks";
+import { fetchLoadMore } from "../../action/fetchLoadMore";
 import { BooksState, IBooks } from "../../types/books"
 
 const initialState: BooksState = {
     books: {
         kind: "",
-        totalItems: "",
+        totalItems: "0",
         items: []
     },
     isLoading: false,
-    error: ""
+    error: "",
+    startIndex: 30
 }
 
-export const BooksSlice = createSlice({
+export const booksSlice = createSlice({
     name: 'books',
     initialState,
-    reducers: {},
+    reducers: {
+        changeStartIndex(state) {
+            state.startIndex += 30
+        }
+    },
     extraReducers: {
         [fetchBooks.fulfilled.type]: (state, action: PayloadAction<IBooks>) => {
             state.isLoading = false;
@@ -29,9 +35,12 @@ export const BooksSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
+        [fetchLoadMore.fulfilled.type]: (state, action: PayloadAction<any[]>) => {
+            state.books.items = [...state.books.items, ...action.payload]
+        }
     }
 })
 
-const booksReduser = BooksSlice.reducer;
+const booksReduser = booksSlice.reducer;
 
 export default booksReduser;

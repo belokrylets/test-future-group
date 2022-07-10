@@ -8,4 +8,5 @@ export interface BooksState {
     books: IBooks;
     isLoading: boolean;
     error: string;
+    startIndex: number;
 }

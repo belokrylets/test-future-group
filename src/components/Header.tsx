@@ -33,9 +33,12 @@ const Header = () => {
                 <div className="categories">
                     <label>
                         Categories
-                        <select onChange={(e) => dispatch(categorySelection(e.target.value))}>
+                        <select onChange={(e) => dispatch(categorySelection(e.target.value))} >
                             <option value="All">All</option>
+                            <option value="Programming">Programming</option>
                             <option value="Computers">Computers</option>
+                            <option value="Business">Business</option>
+                            <option value="Sales">Sales</option>
                         </select>
                     </label>
                 </div>
