@@ -1,4 +1,5 @@
 # Тестовое задание future-group
+
 ## stack:
  - Typescript;
  - React;

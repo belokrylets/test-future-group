@@ -35,7 +35,7 @@ export const booksSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
-        [fetchLoadMore.fulfilled.type]: (state, action: PayloadAction<any[]>) => {
+        [fetchLoadMore.fulfilled.type]: (state, action: PayloadAction<[]>) => {
             state.books.items = [...state.books.items, ...action.payload]
         }
     }

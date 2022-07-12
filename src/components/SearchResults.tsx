@@ -1,8 +1,9 @@
+import React from "react"
 import { useEffect } from "react"
 import { fetchBooks } from "../action/fetchBooks"
 import { useAppDispatch, useAppSelector } from "../hooks/redux"
 import CardBook from "./CardBook"
-import { uniqueId } from "lodash"
+import { uniqueId, has } from "lodash"
 import Loading from "./Loading"
 import { fetchLoadMore } from "../action/fetchLoadMore"
 import { booksSlice } from "../store/redusers/booksSlice"
@@ -39,7 +40,7 @@ const SearchResults = () => {
                 {books.items.map(({ selfLink, volumeInfo }) => {
                     return <CardBook
                         key={uniqueId()}
-                        image={volumeInfo.hasOwnProperty('imageLinks') ? volumeInfo.imageLinks.thumbnail : 'https://dummyimage.com/130x170/a6a6ff'}
+                        image={has(volumeInfo, 'imageLinks') ? volumeInfo.imageLinks.thumbnail : 'https://dummyimage.com/130x170/a6a6ff'}
                         cardCategories={categories}
                         title={volumeInfo.title}
                         author={volumeInfo.authors}
