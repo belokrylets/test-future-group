@@ -33,5 +33,5 @@ export const currentBookSlice = createSlice({
     }
 })
 
-const currentBookReduser = currentBookSlice.reducer;
-export default currentBookReduser;
+const currentBookReducer = currentBookSlice.reducer;
+export default currentBookReducer;

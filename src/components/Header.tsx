@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
-import logo from '../media/image/searh.svg'
-import { searchSlice } from '../store/redusers/searchSlice';
+import logo from '../media/image/search.svg'
+import { searchSlice } from '../store/reducers/reducers';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Header = () => {
     const dispatch = useAppDispatch()
 
 
-    const { searchLine } = useAppSelector(state => state.searchReduser);
+    const { searchLine } = useAppSelector(state => state.searchReducer);
 
 
 

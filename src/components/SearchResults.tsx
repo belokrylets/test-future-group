@@ -6,12 +6,12 @@ import CardBook from "./CardBook"
 import { uniqueId, has } from "lodash"
 import Loading from "./Loading"
 import { fetchLoadMore } from "../action/fetchLoadMore"
-import { booksSlice } from "../store/redusers/booksSlice"
+import { booksSlice } from "../store/reducers/booksSlice"
 
 const SearchResults = () => {
     const dispatch = useAppDispatch()
-    const { books, isLoading, error, startIndex } = useAppSelector(state => state.booksReduser);
-    const { searchLine, categories, sorting } = useAppSelector(state => state.searchReduser)
+    const { books, isLoading, error, startIndex } = useAppSelector(state => state.booksReducer);
+    const { searchLine, categories, sorting } = useAppSelector(state => state.searchReducer)
     const { changeStartIndex } = booksSlice.actions;
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const SearchResults = () => {
     return (
         <>
             {isLoading ? <Loading /> : renderBooks}
-            {error && <h1 className="erorrs">{error}</h1>}
+            {error && <h1 className="errors">{error}</h1>}
 
         </>
 

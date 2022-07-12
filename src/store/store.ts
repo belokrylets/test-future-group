@@ -1,20 +1,20 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import booksReduser from "./redusers/booksSlice";
-import currentBookReduser from "./redusers/currentBookSlice";
-import searchReduser from "./redusers/searchSlice";
+import booksReducer from "./reducers/booksSlice";
+import currentBookReducer from "./reducers/currentBookSlice";
+import searchReducer from "./reducers/reducers";
 
-const rootReduser = combineReducers({
-    booksReduser,
-    searchReduser,
-    currentBookReduser,
+const rootReducer = combineReducers({
+    booksReducer,
+    searchReducer,
+    currentBookReducer,
 })
 
 export const setupStore = () => {
     return configureStore({
-        reducer: rootReduser
+        reducer: rootReducer
     })
 }
 
-export type RootState = ReturnType<typeof rootReduser>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
 export type AppDispatch = AppStore['dispatch'];

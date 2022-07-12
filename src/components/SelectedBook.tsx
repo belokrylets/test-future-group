@@ -5,11 +5,11 @@ import Loading from "./Loading";
 
 const SelectedBook = () => {
     const navigate = useNavigate();
-    const { categories } = useAppSelector(state => state.searchReduser)
-    const { authors, title, imageLinks, description } = useAppSelector(state => state.currentBookReduser.currentBook)
-    const { isLoading, error } = useAppSelector(state => state.currentBookReduser);
+    const { categories } = useAppSelector(state => state.searchReducer)
+    const { authors, title, imageLinks, description } = useAppSelector(state => state.currentBookReducer.currentBook)
+    const { isLoading, error } = useAppSelector(state => state.currentBookReducer);
 
-    const renderSelecedBook = (
+    const renderSelectedBook = (
         <div className="selectedBook">
             <div className="selectedBookImage">
                 <img src={imageLinks} alt="" />
@@ -34,8 +34,8 @@ const SelectedBook = () => {
     )
     return (
         <>
-            {error && <h1 className="erorrs">{error}</h1>}
-            {isLoading ? <Loading /> : renderSelecedBook}
+            {error && <h1 className="errors">{error}</h1>}
+            {isLoading ? <Loading /> : renderSelectedBook}
         </>
 
     )
