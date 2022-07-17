@@ -11,7 +11,6 @@ import SelectedBook from "./components/SelectedBook";
 
 const App = () => {
   return (
-    <div>
       <Router>
         <Header />
         <Routes>
@@ -21,7 +20,6 @@ const App = () => {
           <Route path="*" element={<h3>Ошибка 404. Страница не найдена</h3>} />
         </Routes>
       </Router>
-    </div>
   );
 }
 

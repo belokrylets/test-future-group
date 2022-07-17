@@ -1,5 +1,5 @@
-export interface ISearch {
-    searchLine: string;
-    categories: string;
-    sorting: string;
+export interface Search {
+  searchLine: string;
+  categories: string;
+  sorting: string;
 }

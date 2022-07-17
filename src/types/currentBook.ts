@@ -1,4 +1,4 @@
-export interface ICurrentBook {
+export interface CurrentBook {
   imageLinks: string;
   description: string;
   title: string;
@@ -6,7 +6,7 @@ export interface ICurrentBook {
 }
 
 export interface CurrentBookSliceState {
-  currentBook: ICurrentBook;
+  currentBook: CurrentBook;
   error: string;
   isLoading: boolean;
 }

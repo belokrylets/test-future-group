@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import "../styles/cardBook.css";
 import { useNavigate } from "react-router-dom";
 import { fetchCurrentBook } from "../action/fetchCurrentBook";
 import { useAppDispatch } from "../hooks/redux";
@@ -11,15 +12,14 @@ interface CardBookProps {
   selfLink: string;
 }
 const CardBook = ({ image, cardCategories, title, author, selfLink }: CardBookProps) => {
-  const navigate = useNavigate()
-  const dispatch = useAppDispatch()
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const bookClick = () => {
-    dispatch(fetchCurrentBook(`${selfLink}`))
-    navigate('/bookpage')
-
-  }
+    dispatch(fetchCurrentBook(`${selfLink}`));
+    navigate("/bookpage");
+  };
   return (
-    <div className='cardBook' onClick={bookClick}>
+    <div className="cardBook" onClick={bookClick}>
       <div className="image">
         <img src={image} alt="" />
       </div>
@@ -27,7 +27,7 @@ const CardBook = ({ image, cardCategories, title, author, selfLink }: CardBookPr
       <div className="title">{title}</div>
       <div className="author">{author}</div>
     </div>
-  )
-}
+  );
+};
 
 export default CardBook;
