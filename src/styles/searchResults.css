@@ -1,0 +1,40 @@
+.amount {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 40px 40px 40px 0;
+
+  cursor: pointer;
+}
+
+.buttonLoadMore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 30px 25px;
+  gap: 10px;
+
+  width: 150px;
+  height: 44px;
+
+  background: #c7c7e2;
+  border-radius: 6px;
+  border: none;
+}
+
+.buttonLoadMore:hover {
+  color: #fff;
+  background: #777785;
+}

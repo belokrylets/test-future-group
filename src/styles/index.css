@@ -1,0 +1,74 @@
+@media (min-width: 300px) and (max-width: 600px) {
+  .textInput {
+    padding: 0 20px;
+  }
+
+  .sort {
+    flex-direction: column;
+  }
+
+  .sorting {
+    margin-right: 20px;
+  }
+
+  .selectedBook {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .selectedBookImage > img {
+    height: 70%;
+  }
+
+  .selectedBookInfo {
+    width: 100vw;
+  }
+
+  .path,
+  .selectedBookTitle,
+  .selectedBookAuthor {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 100vw;
+  }
+
+  .selectedDescription {
+    margin: 0 20px;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  .selectedBook {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .selectedBookImage > img {
+    height: 70%;
+  }
+
+  .selectedBookInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .selectedDescription {
+    margin: 0 20px;
+    width: 70%;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.errors {
+  text-align: center;
+}
