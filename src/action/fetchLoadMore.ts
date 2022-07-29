@@ -7,11 +7,12 @@ export const fetchLoadMore = createAsyncThunk(
   "books/fetchLoadMore",
   async (params: Params, thunkApi) => {
     try {
+      const categories = params.categories === "All" ? "" : params.categories;
       const response = await axios.get(
         "https://www.googleapis.com/books/v1/volumes?",
         {
           params: {
-            q: `${params.searchLine}+subject:${params.categories}`,
+            q: `${params.searchLine}+subject:${categories}`,
             startIndex: params.startIndex,
             maxResults: 30,
             orderBy: params.sorting,
